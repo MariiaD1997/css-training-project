@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Corben&display=swap");
+
 body {
   margin: 0;
-  padding: 0;
-  width: 100%;
+  padding: 0 1.5em;
+  width: 95%;
   background-color: #252530;
-  font-family: "Mulish", sans-serif;
 }
 
 .section-container {
@@ -35,53 +36,41 @@ body {
 
 .header {
   display: flex;
-  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-ul {
-  margin-left: 10em;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-decoration: none;
-}
-
-ul li {
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 15px;
-  border: 1.5px solid #88e3de;
-  box-shadow: 0.1em 0.1em 0.21em #6885af;
-}
-
-ul li a {
+header a {
   text-decoration: none;
   color: #dfebeb;
   text-align: center;
-  width: 0.3em;
-  height: 0.3em;
+  margin-right: 1em;
 }
 
-ul li a::after {
+header a::after {
   display: inline-block;
-  content: "°";
+  content: "";
+  width: 0.3em;
+  height: 0.3em;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  transform: translateY(-1em);
   opacity: 0;
 }
 
-header ul li a:hover::after {
-  opacity: 1;
-  color: grey;
-}
-
-header ul li a:visited::after {
+header a:first-child::after {
   opacity: 1;
   color: orange;
 }
 
-h1 {
-  margin-left: 1.5em;
-  color: #dfebeb;
+header a:hover::after {
+  opacity: 1;
+  color: grey;
+}
+
+header a:visited::after {
+  opacity: 1;
+  color: orange;
 }
 
 .main {
@@ -94,8 +83,6 @@ h1 {
   grid-template-areas:
     "big big small1 small2"
     "big big small3 small4";
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 15em 15em;
 }
 
 .container {
@@ -133,11 +120,17 @@ h1 {
 }
 
 h1 {
-  font-family: "Mulish", sans-serif;
+  color: #dfebeb;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Corben";
 }
 
 h2 {
-  font-size: 4em;
+  font-size: 2em;
   color: antiquewhite;
   text-align: center;
 }
@@ -145,6 +138,7 @@ h2 {
 h3 {
   color: bisque;
   text-align: center;
+  font-size: 1.2em;
 }
 
 .quotes {
@@ -311,7 +305,8 @@ h4 {
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  animation: typing 3.5s steps(26), blink-caret 0.75s step-end infinite;
+  animation: typing 3.5s infinite steps(20) alternate,
+    blink-caret 0.75s step-end;
 }
 
 .typing-effect {
